@@ -1,3 +1,6 @@
+.imgTmp{
+    display: none;
+}
 .wrapper3D{
     position: relative;
     width: 100%;
@@ -5,43 +8,12 @@
     perspective: 1000px;
 }
 .circle3D{
-    position: absolute;
-    top: 50%;
-    left: 50%;;
-    transform-style: preserve-3d;
-    transform-origin: center center;
-    transition-duration: 2s;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
-}
-.circle3Ds{
     position: relative;
     width: 100%;
-    height: 100%;
-    transform-origin: center center;
-    transition-duration: 2s;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
-    transform-style: preserve-3d;
-    -webkit-animation: rotateCircle 60s linear infinite;
-    animation: rotateCircle 60s linear infinite;
+    height: 600px;
+    perspective: 1000px;
 }
-.circle3Ds>img{
-    display: block;
-    position: absolute;
-    width: 100%;
-    opacity: 0.95;
-    border-radius: 6px;
-    box-shadow: 4px 4px 4px rgba(0,0,0,.3);
-    transform-origin: center center;
-    transform-style: preserve-3d;
-    transition-duration: 600ms;
-    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
-    transition-property: all;
-    animation-fill-mode:both;
-    animation-play-state: running;
-}
-.cube3D{
+.circle3D .circle3Ds{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,11 +22,31 @@
     transition-property: all;
     transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
     transform-style: preserve-3d;
+    -webkit-animation: rotateCircle 60s linear infinite;
+    animation: rotateCircle 60s linear infinite;
 }
-.cube3Ds{
+.circle3D .circle3Ds>div{
+    position: absolute;
+    opacity: .9;
+    box-shadow: 0 0 10px rgba(0,0,0,.8) inset,0 0 4px rgba(0,0,0,.9);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform-style: preserve-3d;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
+}
+
+.cube3D{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 600px;
+    perspective: 1000px;
+}
+.cube3D .cube3Ds{
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform-origin: center center;
     transition-duration: 2s;
     transition-property: all;
@@ -63,26 +55,92 @@
     -webkit-animation: rotateCube 60s linear infinite;
     animation: rotateCube 60s linear infinite;
 }
-.cube3Ds>img{
+.cube3D .cube3Ds>div{
     position: absolute;
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    opacity: 0.95;
-    border: 4px groove rgba(0,0,0,.6);
-    transition-property: all;
-    transform-origin: center center;
+    opacity: .9;
+    box-shadow: 0 0 10px rgba(0,0,0,.8) inset,0 0 4px rgba(0,0,0,.9);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     transform-style: preserve-3d;
-    transition-duration: 600ms;
+    transition-property: all;
+    transition-duration: 2s;
     transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
-    animation-fill-mode:both;
-    animation-play-state: running;
-}
-.circle3Ds:hover,
-.cube3Ds:hover{
-    /*animation-play-state: paused;*/
 }
 
+.book3D{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    perspective: 1000px;
+}
+.book3D .book3Ds{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
+    -webkit-animation: rotatebook 10s linear infinite;
+    animation: rotatebook 10s linear infinite;
+}
+.book3D .book3Ds>div{
+    position: absolute;
+    opacity: .9;
+    box-shadow: 0 0 10px rgba(0,0,0,.8) inset,0 0 4px rgba(0,0,0,.9);
+    background-repeat: no-repeat;
+    transform-style: preserve-3d;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.1,.7,.7,1.3);
+}
+.book3D .book3Ds .book3D-front{
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    transform-origin: center center;
+    transform: translateZ(15px);
+}
+.book3D .book3Ds .book3D-left{
+    width: 30px;
+    height: 100%;
+    background-position: left center;
+    transform-origin: left center;
+    transform: translateZ(-15px) rotateY(-90deg);
+}
+.book3D .book3Ds .book3D-top{
+    width: 100%;
+    height: 30px;
+    background-position: center top;
+    transform-origin: top center;
+    transform: translateZ(-15px) rotateX(90deg);
+}
+.book3D .book3Ds .book3D-right{
+    width: 30px;
+    height: 100%;
+    background-position: right center;
+    transform-origin: right center;
+}
+.book3D .book3Ds .book3D-back{
+    width: 100%;
+    height: 100%;
+    background-position: right center;
+    transform-origin: center center;
+    transform: translateZ(-15px) rotateY(180deg);
+}
+.book3D .book3Ds .book3D-bottom{
+    width: 100%;
+    height: 30px;
+    background-position: center bottom;
+    transform-origin: center bottom;
+}
+
+.circle3D .circle3Ds:hover,
+.cube3D .cube3Ds:hover,
+.book3D .book3Ds:hover{
+    animation-play-state: paused;
+}
 @-webkit-keyframes rotateCircle {
     0%{ -webkit-transform: rotateX(0deg) rotateY(0deg); }
     10%{ -webkit-transform: rotateX(-6deg) rotateY(36deg); }
@@ -121,4 +179,16 @@
 @keyframes rotateCube {
     0%{ transform: rotateX(0deg) rotateY(0deg); }
     100%{ transform: rotateX(360deg) rotateY(-720deg); }
+}
+
+@-webkit-keyframes rotatebook {
+    0%{ -webkit-transform: rotateX(0deg) rotateY(0deg); }
+    100%{ -webkit-transform: rotateX(0deg) rotateY(-720deg); }
+}
+@keyframes rotatebook {
+    0%{ transform: translateZ(-200px) rotateX(0deg) rotateY(0deg); }
+    25%{ transform: translateZ(-200px) rotateX(-30deg) rotateY(-90deg); }
+    50%{ transform: translateZ(-200px) rotateX(0deg) rotateY(-180deg); }
+    75%{ transform: translateZ(-200px) rotateX(30deg) rotateY(-270deg); }
+    100%{ transform: translateZ(-200px) rotateX(0deg) rotateY(-360deg); }
 }
