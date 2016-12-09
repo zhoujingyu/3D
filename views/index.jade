@@ -1,0 +1,12 @@
+doctype html
+html
+   include ./layout
+   link(rel='stylesheet',href='/css/index.css')
+   script(src='/socket.io/socket.io.js')
+   script(src='/js/index.js?v=9.4')
+   body
+      header #{title}
+      main#content.content
+      footer
+         input(type='text',placeholder='聊天内容')
+         button(type='button') 发送

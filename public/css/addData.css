@@ -1,0 +1,40 @@
+form{
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    color: white;
+    background: rgba(93, 66, 35, 0.84);
+    border-radius: 10px;
+}
+form label{
+    margin-right: 8px;
+    height: 30px;
+    line-height: 30px;
+}
+form input{
+    width: 310px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.9);
+}
+form select{
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+form button{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    background: rgba(134, 97, 58, 0.8);
+}
+form button:hover{
+    cursor: pointer;
+    color: #d8d8d8;
+    background-color: rgba(109, 78, 46, 0.8);
+}

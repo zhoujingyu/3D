@@ -1,0 +1,53 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    line-height: 54px;
+    background-color: #444444;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+.content{
+    position: relative;
+    top: 54px;
+    padding-bottom: 42px;
+}
+footer{
+    position: fixed;
+    display: -webkit-box;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 54px;
+    line-height: 54px;
+    background-color: #444444;
+    z-index: 2;
+}
+footer>input{
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-flex: 1;
+    -webkit-box-align: center;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    padding: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+footer>button{
+    border: none;
+    margin: 10px;
+    width: 54px;
+    height: 34px;
+    border-radius: 5px;
+    background-color: white;
+    color: #444444;
+    vertical-align: top;
+    outline: none;
+}

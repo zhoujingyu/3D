@@ -1,0 +1,134 @@
+.img-box{
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-align: center;
+}
+.img-box>img{
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-flex: 1;
+    box-sizing: border-box;
+    width: 29.3%;
+    margin: 0 2%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 6px inset rgba(203, 169, 133, 0.86);
+    transform-origin: center center;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+.img-box>img:nth-child(1):hover{
+    cursor: pointer;
+    -webkit-transform:scale(1.5) translateX(15%);
+    -moz-transform:scale(1.5) translateX(15%);
+    -o-transform:scale(1.5) translateX(15%);
+    transform:scale(1.5) translateX(15%);
+    z-index: 2;
+}
+.img-box>img:nth-child(2):not(:nth-last-child(1)):hover{
+    cursor: pointer;
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -o-transform:scale(1.5);
+    transform:scale(1.5);
+    z-index: 2;
+}
+.img-box>img:nth-last-child(1):hover{
+    cursor: pointer;
+    -webkit-transform:scale(1.5) translateX(-15%);
+    -moz-transform:scale(1.5) translateX(-15%);
+    -o-transform:scale(1.5) translateX(-15%);
+    transform:scale(1.5) translateX(-15%);
+    z-index: 2;
+}
+img {
+    display: inline-block;
+    width: 30.66%;
+    margin-left: 2%;
+    margin-top: 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 15px #422407;
+    border-radius: 5px;
+    border: 6px inset rgba(203, 169, 133, 0.86);
+    transform-origin: center center;
+    transition-duration: 300ms;
+    transition-timing-function: linear;
+}
+img:hover{
+    cursor: pointer;
+}
+/*img:nth-child(3n+1):hover{*/
+    /*cursor: pointer;*/
+    /*-webkit-transform:scale(1.5) translateX(15%);*/
+    /*-moz-transform:scale(1.5) translateX(15%);*/
+    /*-o-transform:scale(1.5) translateX(15%);*/
+    /*transform:scale(1.5) translateX(15%);*/
+    /*z-index: 2;*/
+/*}*/
+/*img:nth-child(3n+2):hover{*/
+    /*cursor: pointer;*/
+    /*-webkit-transform:scale(1.5);*/
+    /*-moz-transform:scale(1.5);*/
+    /*-o-transform:scale(1.5);*/
+    /*transform:scale(1.5);*/
+    /*z-index: 2;*/
+/*}*/
+/*img:nth-child(3n+3):hover{*/
+    /*cursor: pointer;*/
+    /*-webkit-transform:scale(1.5) translateX(-15%);*/
+    /*-moz-transform:scale(1.5) translateX(-15%);*/
+    /*-o-transform:scale(1.5) translateX(-15%);*/
+    /*transform:scale(1.5) translateX(-15%);*/
+    /*z-index: 2;*/
+/*}*/
+@media screen and (min-width: 640px){
+    img {
+        width: 22.5%;
+    }
+    /*img:nth-child(4n+1):hover{*/
+        /*cursor: pointer;*/
+        /*-webkit-transform:scale(1.5) translateX(15%);*/
+        /*-moz-transform:scale(1.5) translateX(15%);*/
+        /*-o-transform:scale(1.5) translateX(15%);*/
+        /*transform:scale(1.5) translateX(15%);*/
+        /*z-index: 2;*/
+    /*}*/
+    /*img:nth-child(4n+2):hover,img:nth-child(4n+3):hover{*/
+        /*cursor: pointer;*/
+        /*-webkit-transform:scale(1.5);*/
+        /*-moz-transform:scale(1.5);*/
+        /*-o-transform:scale(1.5);*/
+        /*transform:scale(1.5);*/
+        /*z-index: 2;*/
+    /*}*/
+    /*img:nth-child(4n+4):hover{*/
+        /*cursor: pointer;*/
+        /*-webkit-transform:scale(1.5) translateX(-15%);*/
+        /*-moz-transform:scale(1.5) translateX(-15%);*/
+        /*-o-transform:scale(1.5) translateX(-15%);*/
+        /*transform:scale(1.5) translateX(-15%);*/
+        /*z-index: 2;*/
+    /*}*/
+}
+@media screen and (max-width: 500px){
+    img {
+        width: 47%;
+    }
+    /*img:nth-child(2n+1):hover{*/
+        /*cursor: pointer;*/
+        /*-webkit-transform:scale(1.8) translateX(22%);*/
+        /*-moz-transform:scale(1.8) translateX(22%);*/
+        /*-o-transform:scale(1.8) translateX(22%);*/
+        /*transform:scale(1.8) translateX(22%);*/
+        /*z-index: 2;*/
+    /*}*/
+    /*img:nth-child(2n+2):hover{*/
+        /*cursor: pointer;*/
+        /*-webkit-transform:scale(1.8) translateX(-22%);*/
+        /*-moz-transform:scale(1.8) translateX(-22%);*/
+        /*-o-transform:scale(1.8) translateX(-22%);*/
+        /*transform:scale(1.8) translateX(-22%);*/
+        /*z-index: 2;*/
+    /*}*/
+}

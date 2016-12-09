@@ -1,0 +1,18 @@
+doctype html
+html
+    include ./layout
+    link(rel='stylesheet',href='/css/pictureInner.css')
+    script(src='/js/LazyLoad.js')
+    script(src='/js/pictureInner.js')
+    body
+       //- for(var i=1;i<=data[0].count;i+=3)
+       //  - if(i%3==1)
+       //     div.img-box
+       //        - if(i<=data[0].count)
+       //           img(src="#{data[0].path}#{i}.#{data[0].type}")
+       //        - if(i+1<=data[0].count)
+       //           img(src="#{data[0].path}#{i+1}.#{data[0].type}")
+       //        - if(i+2<=data[0].count)
+       //           img(src="#{data[0].path}#{i+2}.#{data[0].type}")
+       - for(var i=1;i<=data[0].count;i+=1)
+         img(src="/img/common/loading.png",data-src="#{data[0].path}#{i}.#{data[0].type}")

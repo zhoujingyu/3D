@@ -1,0 +1,24 @@
+doctype html
+html
+   include ./layout
+   link(rel='stylesheet',href='/css/pictureWall.css')
+   script(src='/js/LazyLoad.js')
+   script(src='/js/pictureWall.js')
+   body
+      header
+         div#goTop.tab.pointer 顶部
+         div#bar.bar
+            input#range.range(type="range",min="0",max="1000",value="0")
+         div#goBottom.tab.pointer 底部
+      main#mainTop.pointer
+      main#mainBottom.pointer
+      div#sortBox.sortBox
+         div#sort.sort
+            svg.icon(aria-hidden="true")
+               use(xlink:href="#icon-biaoqian")
+         div.sort-child(data-key="*") 全部
+         - var len=sortList.length
+         - for(var i=0;i<len;i++)
+            div.sort-child(data-key="#{sortList[i].sort}") #{sortList[i].sort}
+
+
