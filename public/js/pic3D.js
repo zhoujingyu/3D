@@ -147,7 +147,6 @@ Create3D.prototype.createCube=function(sides,width,path,start){
     for(var i=0;i<sides;i++){
         imgArr.push(new Image());
         imgArr[i].src=path+(start+i)+'.'+this.data.type;
-        //url=path+(start+i)+"."+this.data.type;
         style=[
             "width:"+width+"px",
             "height:"+width+"px",

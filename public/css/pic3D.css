@@ -60,7 +60,8 @@
     opacity: .9;
     box-shadow: 0 0 10px rgba(0,0,0,.8) inset,0 0 4px rgba(0,0,0,.9);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center center;
     transform-style: preserve-3d;
     transition-property: all;
     transition-duration: 2s;
