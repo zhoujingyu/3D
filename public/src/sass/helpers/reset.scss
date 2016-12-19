@@ -1,0 +1,16 @@
+html,body,p,a,ul,li,input{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 16px;
+  background-image: url(/img/common/bg.png);
+  background-repeat: repeat;
+}
+body,input,button{
+  font-family: "Microsoft YaHei",serif;
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}
