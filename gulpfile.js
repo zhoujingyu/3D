@@ -8,7 +8,7 @@ gulp.task('watchSass',function(){
         gulp.src('./public/src/sass/**')
             .pipe(sass({
                 outputStyle:'compact'
-            }))
+            }).on('error',sass.logError))
             .pipe(cssmin({
                 keepBreaks:true,
                 keepSpecialComments: '*'

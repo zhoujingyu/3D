@@ -1,2 +1,68 @@
-@import "reset";
+@import "../helpers/reset";
 
+@mixin wrapper3D {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  perspective: 1000px;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin transform($tDuration,$tProperty,$tTimingFunction,$tStyle,$tOrigin:center center) {
+  transition-duration: $tDuration;
+  transition-property: $tProperty;
+  transition-timing-function: $tTimingFunction;
+  transform-style: $tStyle;
+  transform-origin: $tOrigin;
+}
+
+@mixin animation($name,$time,$timing,$count:initial,$fill:'') {
+  -webkit-animation: $name $time $timing $count $fill;
+  -moz-animation: $name $time $timing $count $fill;
+  -o-animation: $name $time $timing $count $fill;
+  animation: $name $time $timing $count $fill;
+}
+
+@mixin boxShadow {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .8) inset, 0 0 4px rgba(0, 0, 0, .9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .8) inset, 0 0 4px rgba(0, 0, 0, .9);
+}
+
+@mixin rotateCircle($rotateX0,$rotateX1,$rotateY0,$rotateY1) {
+  $count: 100%;
+  $i: 0%;
+  $Xdeg:0deg;
+  $Xstep:3deg;
+  @-webkit-keyframes rotateCircle {
+    @while $i<=$count{
+      @if 
+      #{$i} {
+        -webkit-transform: rotateX(0);
+      }
+    }
+  }
+}
+
+@include rotateCircle(0, 15deg, 0, 360deg);
+
+.circle3D {
+  @include wrapper3D;
+  .circle3Ds {
+    @include center;
+    transform-style: preserve-3d;
+    @include animation(rotateCircle, 60s, linear, infinite);
+    & > div {
+      position: absolute;
+      opacity: .9;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      @include boxShadow;
+      @include transform(2s, all, cubic-bezier(.1, .7, .7, 1.3), preserve-3d);
+    }
+  }
+}
