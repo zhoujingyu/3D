@@ -36,14 +36,19 @@
 @mixin rotateCircle($rotateX0,$rotateX1,$rotateY0,$rotateY1) {
   $count: 100%;
   $i: 0%;
-  $Xdeg:0deg;
-  $Xstep:3deg;
+  $Xdeg: 0deg;
+  $Xstep: 3deg;
   @-webkit-keyframes rotateCircle {
-    @while $i<=$count{
-      @if 
-      #{$i} {
-        -webkit-transform: rotateX(0);
+    @while $i<=$count {
+      @if $i <= 25% {
+        $Xdeg = $Xdeg - $Xstep;
+      } @else {
+        $Xdeg = $Xdeg + $Xstep;
       }
+      #{$i} {
+        -webkit-transform: rotateX($Xdeg);
+      }
+      $i + = 5 %;
     }
   }
 }
