@@ -21,7 +21,7 @@
   transform-origin: $tOrigin;
 }
 
-@mixin animation($name,$time,$timing,$count:initial,$fill:'') {
+@mixin animation($name,$time,$timing,$count,$fill:null) {
   -webkit-animation: $name $time $timing $count $fill;
   -moz-animation: $name $time $timing $count $fill;
   -o-animation: $name $time $timing $count $fill;
@@ -37,23 +37,23 @@
   $count: 100%;
   $i: 0%;
   $Xdeg: 0deg;
-  $Xstep: 3deg;
+  $Xstep: $rotateX1/5;
   @-webkit-keyframes rotateCircle {
     @while $i<=$count {
-      @if $i <= 25% {
-        $Xdeg = $Xdeg - $Xstep;
-      } @else {
-        $Xdeg = $Xdeg + $Xstep;
-      }
       #{$i} {
         -webkit-transform: rotateX($Xdeg);
       }
-      $i + = 5 %;
+      $i: $i + 5%;
+      @if $i <= 25% or $i > 75% {
+        $Xdeg: $Xdeg - $Xstep;
+      } @else {
+        $Xdeg: $Xdeg + $Xstep;
+      }
     }
   }
 }
 
-@include rotateCircle(0, 15deg, 0, 360deg);
+@include rotateCircle(0, 55deg, 0, 360deg);
 
 .circle3D {
   @include wrapper3D;
