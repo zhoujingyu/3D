@@ -1,4 +1,5 @@
 @import "../helpers/reset";
+@import "../helpers/_functions";
 
 @mixin wrapper3D {
   position: relative;
@@ -13,47 +14,15 @@
   left: 50%;
 }
 
-@mixin transform($tDuration,$tProperty,$tTimingFunction,$tStyle,$tOrigin:center center) {
-  transition-duration: $tDuration;
-  transition-property: $tProperty;
-  transition-timing-function: $tTimingFunction;
-  transform-style: $tStyle;
-  transform-origin: $tOrigin;
-}
-
 @mixin animation($name,$time,$timing,$count,$fill:null) {
-  -webkit-animation: $name $time $timing $count $fill;
-  -moz-animation: $name $time $timing $count $fill;
-  -o-animation: $name $time $timing $count $fill;
   animation: $name $time $timing $count $fill;
 }
 
 @mixin boxShadow {
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .8) inset, 0 0 4px rgba(0, 0, 0, .9);
   box-shadow: 0 0 10px rgba(0, 0, 0, .8) inset, 0 0 4px rgba(0, 0, 0, .9);
 }
 
-@mixin rotateCircle($rotateX0,$rotateX1,$rotateY0,$rotateY1) {
-  $count: 100%;
-  $i: 0%;
-  $Xdeg: 0deg;
-  $Xstep: $rotateX1/5;
-  @-webkit-keyframes rotateCircle {
-    @while $i<=$count {
-      #{$i} {
-        -webkit-transform: rotateX($Xdeg);
-      }
-      $i: $i + 5%;
-      @if $i <= 25% or $i > 75% {
-        $Xdeg: $Xdeg - $Xstep;
-      } @else {
-        $Xdeg: $Xdeg + $Xstep;
-      }
-    }
-  }
-}
-
-@include rotateCircle(0, 55deg, 0, 360deg);
+@include rotateCircle(0, 15deg, 0, 360deg);
 
 .circle3D {
   @include wrapper3D;

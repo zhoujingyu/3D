@@ -1,0 +1,45 @@
+/**
+ * 创建上下左右旋转动画
+ * @param $rotateX0 上下旋转的原点
+ * @param $rotateX1 上下旋转的篇幅
+ * @param $rotateY0 左右旋转的原点
+ * @param $rotateY1 上下旋转的篇幅
+ */
+@mixin rotateCircle($rotateX0,$rotateX1,$rotateY0,$rotateY1) {
+  $count: 100%;
+  $i: 0%;
+  $XDeg: $rotateX0;
+  $XStep: $rotateX1/5;
+  $YDeg: $rotateY0;
+  $YStep: $rotateY1/20;
+  @keyframes rotateCircle {
+    @while $i<=$count {
+      #{$i} {
+        transform: rotateX($XDeg) rotateY($YDeg);
+      }
+      $i: $i + 5%;
+      $YDeg: $YDeg + $YStep;
+      @if $i <= 25% or $i > 75% {
+        $XDeg: $XDeg - $XStep;
+      } @else {
+        $XDeg: $XDeg + $XStep;
+      }
+    }
+  }
+}
+
+/**
+ * 创建动画属性
+ * @param $tDuration 时间
+ * @param $tProperty
+ * @param $tTimingFunction
+ * @param $tStyle
+ * @param $tOrigin
+ */
+@mixin transform($tDuration,$tProperty,$tTimingFunction,$tStyle,$tOrigin:center center) {
+  transition-duration: $tDuration;
+  transition-property: $tProperty;
+  transition-timing-function: $tTimingFunction;
+  transform-style: $tStyle;
+  transform-origin: $tOrigin;
+}

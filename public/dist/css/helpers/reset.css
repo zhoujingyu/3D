@@ -1,0 +1,4 @@
+a,body,html,input,li,p,ul{margin:0;padding:0}
+body{font-size:16px;background-image:url(/img/common/bg.png);background-repeat:repeat}
+body,button,input{font-family:"Microsoft YaHei",serif}
+::-webkit-scrollbar{width:0;height:0}
