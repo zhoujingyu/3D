@@ -1,13 +1,13 @@
 var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    port:'3306',
-    user: 'root',
-    password: '',
-    database:'mine'
-});
-
-connection.connect();
+//var connection = mysql.createConnection({
+//    host: 'localhost',
+//    port:'3306',
+//    user: 'root',
+//    password: '',
+//    database:'mine'
+//});
+//
+//connection.connect();
 
 //connection.query('insert into image(path,title,count,type) values("/img/girl/xiaoqiai/121/","筱琦爱222444",15,"jpg")',function(err, rows, fields) {
 //    if(err){
